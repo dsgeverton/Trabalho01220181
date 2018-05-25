@@ -7,38 +7,12 @@
     tools:context=".MainActivity">
 
     <Spinner
-        android:id="@+id/spinnerFilhos"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="200dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewFilhos"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinnerFaltas"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="150dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewFaltas"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinnerHoras"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toEndOf="@+id/textViewHoras"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
         android:id="@+id/spinnerCargo"
-        android:layout_width="208dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="50dp"
+
         app:layout_constraintStart_toEndOf="@+id/textViewCargo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,4 +59,50 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNumeroFilhos" />
+
+    <EditText
+        android:id="@+id/textNumeroHoras"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textViewHoras"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCargo" />
+
+    <EditText
+        android:id="@+id/textNumeroFaltas"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textViewFaltas"
+        app:layout_constraintTop_toBottomOf="@+id/textNumeroHoras" />
+
+    <EditText
+        android:id="@+id/textNumeroFilhos"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textViewFilhos"
+        app:layout_constraintTop_toBottomOf="@+id/textNumeroFaltas" />
+
 </android.support.constraint.ConstraintLayout>
