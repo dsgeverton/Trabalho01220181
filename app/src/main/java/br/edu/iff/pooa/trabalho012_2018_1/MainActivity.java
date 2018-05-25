@@ -76,7 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             salarioLiquido = proventos - descontos;
 
-            Toast.makeText(getApplicationContext(),"Item:"+item+" Horas:"+horaExtra+" Faltas:"+numeroFaltas+" Filhos:"+numeroFilhos, Toast.LENGTH_SHORT).show();
+            this.mViewHolder.resultadoProventos.setText(String.format("R$ ", proventos));
+            this.mViewHolder.resultadoDescontos.setText(String.format("R$ ", descontos));
+            this.mViewHolder.resultadoSalarioLiquido.setText(String.format("R$ ", salarioLiquido));
+            this.mViewHolder.linearLayoutResultados.setVisibility(View.VISIBLE);
         }
     }
 
