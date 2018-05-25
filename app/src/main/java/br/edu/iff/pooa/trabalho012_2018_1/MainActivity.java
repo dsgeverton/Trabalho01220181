@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int numeroFaltas = Integer.parseInt(this.mViewHolder.textNumeroFaltas.getText().toString());
         int numeroFilhos = Integer.parseInt(this.mViewHolder.textQtdFilhos.getText().toString());
 
-        String item = this.mViewHolder.spinnerCargo.getSelectedItem().toString();
-
         if (v.getId() == this.mViewHolder.buttonCalcular.getId()){
 
             float salarioBase, salarioLiquido;
@@ -66,9 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else
             {   salarioBase = 0; }
 
-            valorHoraExtra = (salarioBase / 240) * 2;
-            adicionalPorFilhos = (float)(salarioBase * 1.03);
-            proventos = (salarioBase + valorHoraExtra + adicionalPorFilhos);
+            valorHoraExtra = ((salarioBase / 240) * 2) * horaExtra;
+            adicionalPorFilhos = (float) (salarioBase * 0.03);
+            proventos = (salarioBase + valorHoraExtra + (adicionalPorFilhos*numeroFilhos));
 
             debitoFaltas = (salarioBase / 30) * numeroFaltas;
             debitoINSS = (float) (proventos * 0.1);
@@ -76,9 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             salarioLiquido = proventos - descontos;
 
-            this.mViewHolder.resultadoProventos.setText(String.format("R$ ", proventos));
-            this.mViewHolder.resultadoDescontos.setText(String.format("R$ ", descontos));
-            this.mViewHolder.resultadoSalarioLiquido.setText(String.format("R$ ", salarioLiquido));
+            this.mViewHolder.resultadoProventos.setText(String.format("R$ %.2f", proventos));
+            this.mViewHolder.resultadoDescontos.setText(String.format("R$ %.2f", descontos));
+            this.mViewHolder.resultadoSalarioLiquido.setText(String.format("R$ %.2f", salarioLiquido));
             this.mViewHolder.linearLayoutResultados.setVisibility(View.VISIBLE);
         }
     }
