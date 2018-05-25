@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Trabalho01.2-2018-1</string>
+    <string-array name="cargo">
+        <item>Gerente</item>
+        <item>Supervisor</item>
+        <item>Servente</item>
+    </string-array>
+
+</resources>
